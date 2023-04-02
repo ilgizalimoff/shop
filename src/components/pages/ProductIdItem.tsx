@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { BasketContext, DataContext } from '../../context/context'
+import { homePage } from '../../constants/constants'
 
 const ProductIdItem = () => {
   const { basketItems, setBasketItems } = useContext(BasketContext)
@@ -61,14 +62,18 @@ const ProductIdItem = () => {
       <div className="container">
         <div className="page__name">
           <span>Главная</span>
-          <span>Каталог</span>
+          <span>
+            <Link to={'/catalog'}>
+              Каталог
+            </Link>
+          </span>
           <span className='page__name-value'>{product[0]?.description}</span>
         </div>
         <div className="card__wrapper">
           <div className="img__block">
             <img
               src={
-                "../../.." + product[0]?.image_url
+                homePage + product[0]?.image_url
               }
             />
           </div>
@@ -89,8 +94,8 @@ const ProductIdItem = () => {
             <div className="card__size-type">
               <img src={
                 product[0]?.size_type == 'мл' ?
-                  '../../../img/volume.svg' :
-                  '../../../img/weight.svg'
+                  homePage + '/img/volume.svg' :
+                  homePage + '/img/weight.svg'
               }
               />
 
@@ -144,7 +149,7 @@ const ProductIdItem = () => {
 
             <div className="share">
               <div className="share__icon">
-                <img src="../../../img/share.svg" />
+                <img src={homePage + "/img/share.svg"} />
               </div>
 
               <div className="share__description">
@@ -154,7 +159,7 @@ const ProductIdItem = () => {
               <div className="price__list">
                 <span>Прайс-лист</span>
 
-                <img src="../../../img/gray-download.svg" />
+                <img src={homePage + "/img/gray-download.svg"} />
               </div>
             </div>
 
@@ -193,7 +198,7 @@ const ProductIdItem = () => {
                 <div className="desc__btn-header">
                   <h3>Описание</h3>
 
-                  <img src="../../../img/select.svg" />
+                  <img src={homePage + "/img/select.svg"} />
                 </div>
 
                 <p>
@@ -208,7 +213,7 @@ const ProductIdItem = () => {
               <div className="characteristic">
                 <div className="characteristic__header">
                   <h3>Характеристики</h3>
-                  <img src="../../../img/select.svg" alt="" />
+                  <img src={homePage + "/img/select.svg"} alt="" />
                 </div>
 
                 <ul className="characteristic__info">

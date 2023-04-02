@@ -1,5 +1,6 @@
 import { useState, FC, useContext } from 'react'
 import { BasketContext } from '../../context/context'
+import { homePage } from '../../constants/constants'
 
 interface IBasketItemProps {
     value: any,
@@ -42,7 +43,7 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
     return (
         <div className="basket__item">s
             <div className="basket__item-img">
-                <img src={"../../.." + value?.image_url} alt="" />
+                <img src={homePage + value?.image_url} alt="" />
             </div>
 
             <div className="basket__item-description-wrapper">
@@ -51,8 +52,8 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
                         <img
                             src={
                                 value.size_type == 'мл'
-                                    ? './img/volume.svg'
-                                    : './img/weight.svg'
+                                    ? homePage + '/img/volume.svg'
+                                    : homePage + '/img/weight.svg'
                             }
                         />
                         <span>
@@ -105,7 +106,7 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
 
                     <img
                         onClick={() => removeFromBasket(value?.id)}
-                        src="../../../img/remove.svg"
+                        src={homePage + "/img/remove.svg"}
                     />
                 </div>
             </div>

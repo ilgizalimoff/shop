@@ -1,3 +1,5 @@
+import { homePage } from "../../constants/constants";
+
 export default function Footer() {
     return (
         <footer>
@@ -5,7 +7,7 @@ export default function Footer() {
                 <div className="footer__wrapper">
                     <div className="company__info">
                         <div className="footer__logo">
-                            <img src="../../../img/footer-logo.png" />
+                            <img src={homePage + "/img/footer-logo.png"} />
                         </div>
 
                         <div className="footer__description">
@@ -22,7 +24,7 @@ export default function Footer() {
                         <div className='email__input'>
                             <input placeholder='Введите ваш E-mail' type="text" />
 
-                            <img src="../../../img/email-arrow.svg" alt="" />
+                            <img src={homePage + "/img/email-arrow.svg"} alt="" />
                         </div>
                     </div>
 
@@ -60,8 +62,8 @@ export default function Footer() {
                             </div>
 
                             <div className="connection">
-                                <img src="../../../img/whatsapp.png" alt="" />
-                                <img src="../../../img/telegram.png" alt="" />
+                                <img src={homePage + "/img/whatsapp.png"} />
+                                <img src={homePage + "/img/telegram.png"} alt="" />
                             </div>
                         </li>
 
@@ -89,8 +91,8 @@ export default function Footer() {
                             </div>
 
                             <div className="bank__cards">
-                                <img src="../../../img/visa.png" />
-                                <img src="../../../img/mastercard.png" />
+                                <img src={homePage + "/img/visa.png"} />
+                                <img src={homePage + "/img/mastercard.png"} />
                             </div>
                         </li>
                     </ul>

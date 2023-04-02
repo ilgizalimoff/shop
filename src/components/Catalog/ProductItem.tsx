@@ -2,6 +2,7 @@ import { FC, useContext } from 'react'
 import { IProduct } from '../../types/types'
 import { Link } from "react-router-dom";
 import { BasketContext } from '../../context/context';
+import { homePage } from '../../constants/constants';
 
 interface ProductItemProps {
     product: IProduct,
@@ -31,7 +32,7 @@ const ProductItem: FC<ProductItemProps> = ({ product }) => {
     return (
         <div className="product__item">
             <div className="item__img">
-                <img src={'.' + product.image_url} />
+                <img src={homePage + product.image_url} />
             </div>
 
             <div className="item__description">
@@ -39,8 +40,8 @@ const ProductItem: FC<ProductItemProps> = ({ product }) => {
                     <img src=
                         {
                             product.size_type == 'мл'
-                                ? './img/volume.svg'
-                                : './img/weight.svg'
+                                ? homePage + '/img/volume.svg'
+                                : homePage + '/img/weight.svg'
                         }
                     />
 

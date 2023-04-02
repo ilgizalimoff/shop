@@ -1,12 +1,13 @@
 import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { BasketContext } from '../../context/context';
+import { homePage } from '../../constants/constants';
 
 const HeaderMain = () => {
     const { basketItems } = useContext(BasketContext)
-    
+
     const [result, setResult] = useState<any>()
-    
+
     useEffect(() => {
         let sum = basketItems.reduce((acc: any, curval: any) =>
             acc + (Number(curval.price.replace(',', '.')) * curval.count), 0)
@@ -18,7 +19,7 @@ const HeaderMain = () => {
         <ul className="header__main">
             <li className="logo">
                 <Link to="/catalog">
-                    <img src="/img/logo.png" alt="" />
+                    <img src={homePage + "/img/logo.png"} alt="" />
                 </Link>
             </li>
 
@@ -30,7 +31,7 @@ const HeaderMain = () => {
 
             <li className="search">
                 <input type="text" placeholder="Поиск..." />
-                <img src="/img/search.svg" alt="" />
+                <img src={homePage + "/img/search.svg"} alt="" />
             </li>
 
             <li>
@@ -43,7 +44,7 @@ const HeaderMain = () => {
                         <span>Заказать звонок</span>
                     </div>
 
-                    <img src="/img/girl.png" />
+                    <img src={homePage + '/img/girl.png'} />
                 </a>
             </li>
 
@@ -63,9 +64,9 @@ const HeaderMain = () => {
                             {basketItems.length}
                         </span>
 
-                        <img src="/img/basket.svg" />
+                        <img src={homePage + "/img/basket.svg"} />
                     </div>
-                    
+
                     <div>
                         <span>Корзина</span>
                         <h3>{result} ₸ </h3>

@@ -56,7 +56,7 @@
         },
         {
             "id": 4,
-            "image_url": "/img/aplmolive.jpg",
+            "image_url": "/img/palmolive.jpg",
             "name": "Palmolive",
             "size_type": "мл",
             "size": "1000",
@@ -110,7 +110,7 @@
         },
         {
             "id": 7,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/hbc/hcb/11495683293214/1174010-1-200Wx200H.jpg",
+            "image_url": "/img/aura.jpg",
             "name": "Aura",
             "size_type": "мл",
             "size": "75",
@@ -146,7 +146,7 @@
         },
         {
             "id": 9,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/hb5/h8c/10350598324254/1005023-1-800Wx800H.jpg",
+            "image_url": "/img/diadem.jpg",
             "name": "Диадем",
             "size_type": "мл",
             "size": "250",
@@ -164,7 +164,7 @@
         },
         {
             "id": 10,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/h92/hd4/11505016406046/1675094-1-800Wx800H.jpg",
+            "image_url": "/img/shalet.jpeg",
             "name": "Shalet",
             "size_type": "мл",
             "size": "75",
@@ -182,7 +182,7 @@
         },
         {
             "id": 11,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/h67/hab/11436814794782/1625621-1-800Wx800H.jpg",
+            "image_url": "/img/umka.jpg",
             "name": "Умка",
             "size_type": "г",
             "size": "3",
@@ -200,7 +200,7 @@
         },
         {
             "id": 12,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/h54/h41/11543270195230/559400-1-800Wx800H.jpg",
+            "image_url": "/img/luskan.jpg",
             "name": "Luscan",
             "size_type": "г",
             "size": "150",
@@ -218,7 +218,7 @@
         },
         {
             "id": 13,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/h20/h0f/10547134693406/559098-1-800Wx800H.jpg",
+            "image_url": "/img/rexona.jpg",
             "name": "Rexona ",
             "size_type": "мл",
             "size": "150",
@@ -236,7 +236,7 @@
         },
         {
             "id": 14,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/hf9/hc7/11508114096158/1679927-1-800Wx800H.jpg",
+            "image_url": "/img/rocs.jpg",
             "name": "R.O.C.S",
             "size_type": "мл",
             "size": "400",
@@ -254,7 +254,7 @@
         },
         {
             "id": 15,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/hca/he9/10469293228062/362152-1-800Wx800H.jpg",
+            "image_url": "/img/matrix.jpg",
             "name": "Matrix ",
             "size_type": "г",
             "size": "7000",
@@ -272,7 +272,7 @@
         },
         {
             "id": 16,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/hb8/h99/11435088379934/1638602-1-800Wx800H.jpg",
+            "image_url": "/img/estel.jpg",
             "name": "Estel",
             "size_type": "г",
             "size": "750",
@@ -290,7 +290,7 @@
         },
         {
             "id": 17,
-            "image_url": "https://media.komus.ru/medias/sys_master/root/ha1/hec/10146397290526/628645-1-800Wx800H.jpg",
+            "image_url": "/img/qmatic.jpg",
             "name": "Q-Matic",
             "size_type": "г",
             "size": "60x60",

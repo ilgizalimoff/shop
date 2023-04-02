@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import { homePage } from "../../constants/constants";
 
 export default function HeaderTop() {
     return (
         <div className="header__top">
             <div className="header__top-left">
                 <a className="adress">
-                    <img src="/img/map.svg" alt="" />
+                    <img src={homePage + "/img/map.svg"} alt="" />
 
                     <div>
                         <h3>
@@ -19,7 +20,7 @@ export default function HeaderTop() {
                 </a>
 
                 <a className="mail">
-                    <img src="/img/mail.svg" alt="mail" />
+                    <img src={homePage + "/img/mail.svg"} />
 
                     <div>
                         <h3>opt.sultan@mail.ru </h3>
@@ -33,7 +34,11 @@ export default function HeaderTop() {
                 <li><a href="">Доставка и оплата</a></li>
                 <li><a href="">Возврат</a></li>
                 <li><a href="">Контакты</a></li>
-                <li className="admin"><Link to='/admin'>Админ-панель</Link></li>
+                <li className="admin">
+                    <Link to='/admin'>
+                        Админ-панель
+                    </Link>
+                </li>
             </ul>
         </div>
     )

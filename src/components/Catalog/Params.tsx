@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { mainMenuItems } from '../../constants/constants'
+import { homePage, mainMenuItems } from '../../constants/constants'
 
 interface IParamsProps {
     menuItemClick: any
@@ -30,7 +30,7 @@ const Params: FC<IParamsProps> = ({ menuItemClick, active }) => {
                 <div className="search__producer">
                     <input type="text" placeholder="Поиск..." />
 
-                    <img src="./img/search.svg" alt="" />
+                    <img src={homePage + "/img/search.svg"} alt="" />
                 </div>
 
                 <div className="producers">
@@ -55,7 +55,7 @@ const Params: FC<IParamsProps> = ({ menuItemClick, active }) => {
                     <a href="">
                         <span> Показать все</span>
 
-                        <img src="./img/select.svg" alt="" />
+                        <img src={homePage + "/img/select.svg"} alt="" />
                     </a>
                 </div>
             </div>

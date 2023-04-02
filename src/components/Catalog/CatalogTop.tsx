@@ -1,5 +1,5 @@
 import { useMemo, useState, useContext, useEffect, FC, useRef } from 'react'
-import { mainMenuItems, options } from '../../constants/constants'
+import { homePage, mainMenuItems, options } from '../../constants/constants'
 
 interface ICatalogTopProps {
     value?: any
@@ -54,7 +54,7 @@ const CatalogTop: FC<ICatalogTopProps> = ({ active, value, onChange, defaulValue
 
                         <a>
                             <img ref={selectImgRef}
-                                className='down' src="./img/select.svg" alt=""
+                                className='down' src={homePage + "/img/select.svg"} alt=""
                             />
                         </a>
                     </div>

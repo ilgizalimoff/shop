@@ -1,5 +1,4 @@
 .basket__item {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,10 +22,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .basket__item-description {
-    width: 480px;
+    max-width: 480px;
+    margin-right: 44px;
 }
 
 .basket__item-size span {
@@ -45,6 +46,7 @@
     line-height: 36px;
     color: #111111;
     margin: 10px 0;
+
 }
 
 .basket__item-description-value {
@@ -57,6 +59,7 @@
     font-size: 12px;
     line-height: 18px;
     color: #3F4E65;
+
 }
 
 .basket__params {
@@ -65,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 44px;
+    margin: 20px 0;
 }
 
 .basket__item-price {

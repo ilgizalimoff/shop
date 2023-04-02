@@ -1,6 +1,7 @@
 import { FC, useContext } from 'react'
 import { DataContext } from '../../context/context'
 import { getPagesArray } from '../../utils/utils'
+import { homePage } from '../../constants/constants'
 
 interface IPaginationProps {
     changePage: any
@@ -13,7 +14,7 @@ const Pagination: FC<IPaginationProps> = ({ changePage }) => {
     return (
         <div className="pagination__wrapper">
             <div className='pagination'>
-                <img src="./img/left.svg" alt="" />
+                <img src={homePage + "/img/left.svg"} alt="" />
 
                 <ul className="page__items">
                     {
@@ -32,7 +33,7 @@ const Pagination: FC<IPaginationProps> = ({ changePage }) => {
                     }
                 </ul>
 
-                <img src="./img/right.svg" />
+                <img src={homePage + "/img/right.svg"} />
             </div >
         </div >
     )

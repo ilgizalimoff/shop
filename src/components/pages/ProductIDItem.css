@@ -22,6 +22,14 @@
     margin-left: 10px;
 }
 
+.page__name a {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3F4E65;
+}
+
 .page__name span:last-child {
     padding-right: 0;
     border-right: none;
@@ -35,22 +43,23 @@
 .card__wrapper {
     display: flex;
     justify-content: space-between;
-    height: 933px;
     margin: 65px 0;
 }
 
 .img__block {
     width: 664px;
+    height: 471px;
     display: flex;
     justify-content: center;
 }
 
 .img__block img {
-    height: 471px;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .card__description {
-    width: 628px;
+    max-width: 628px;
 }
 
 .presence {
@@ -91,7 +100,7 @@
 }
 
 .card__price {
-    width: 490px;
+    max-width: 490px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -165,7 +174,7 @@
 
 .share__icon {
     width: 77px;
-    width: 77px;
+    height: 77px;
     padding: 28px;
     background: #FFFFFF;
     box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
@@ -173,7 +182,7 @@
 }
 
 .share__description {
-    width: 316px;
+    max-width: 316px;
     height: 77px;
     padding: 20px 35px;
     background: #FFFFFF;
@@ -274,7 +283,7 @@
     font-size: 12px;
     line-height: 18px;
     color: #3F4E65;
-    width: 611px;
+    max-width: 611px;
 }
 
 .characteristic__info {
