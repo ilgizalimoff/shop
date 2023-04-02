@@ -1,0 +1,150 @@
+.header__main {
+    height: 107px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__main li {
+    display: inline;
+}
+
+.cat {
+    width: 192px;
+    height: 59px;
+    border-radius: 79px;
+    padding: 10px 19px 10px 0px;
+    background-color: #FFC85E;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin: auto;
+    position: relative;
+}
+
+.cat::after {
+    content: url('/public/img/catalog.svg');
+    position: absolute;
+    margin-left: 12px;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    width: 263px;
+    height: 59px;
+    border-radius: 36px;
+    background: #EDEDED;
+    padding: 13px 10px 13px 20px;
+}
+
+.search img {
+    position: absolute;
+    content: url('/public/img/search.svg');
+    padding: 10px;
+    width: 39px;
+    height: 39px;
+    border-radius: 1000px;
+    background: #FFC85E;
+    top: 13px;
+    right: 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.tel {
+    width: 236px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tel div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.tel h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #111111;
+}
+
+.tel span {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3F4E65;
+}
+
+.prace {
+    width: 200px;
+    height: 59px;
+    border-radius: 79px;
+    padding: 10px 19px 10px 0px;
+    background-color: #FFC85E;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin: auto;
+    position: relative;
+}
+
+.prace::after {
+    content: url('/public/img/download.svg');
+    position: absolute;
+    margin-left: 12px;
+}
+
+.basket__btn {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket__btn h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #111111;
+}
+
+.basket__btn span {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3F4E65;
+}
+
+.basket_count {
+    position: relative;
+}
+
+.basket_count span {
+    position: absolute;
+    padding: 2px;
+    height: 25px;
+    width: 25px;
+    background-color: #FFC85E;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    left: 28px;
+    text-align: center;
+    vertical-align: middle;
+}

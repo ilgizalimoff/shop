@@ -1,0 +1,62 @@
+.header__top {
+    height: 61px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__top-left {
+    width: 495px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adress {
+    width: 275px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mail {
+    width: 178px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adress span,
+.mail span {
+    color: #3F4E65;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.adress h3,
+.mail h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #111111;
+}
+
+.header__menu {
+    width: 512px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #3F4E65;
+}
+
+.admin{
+    border-radius: 15px;
+    padding: 8px;
+    background-color: #FFC85E;
+    text-decoration: underline;
+}

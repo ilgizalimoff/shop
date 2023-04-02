@@ -1,0 +1,156 @@
+footer {
+    height: 500px;
+    background: #3F4E65;
+    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+    padding: 71px 0 116px 0;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company__info {
+    width: 320px;
+}
+
+.footer__description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 15px 0 45px 0;
+}
+
+.footer__menu {
+    width: 951px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__menu li>h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.footer__menu li li {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.footer__menu li li:first {
+    margin-top: 0;
+}
+
+.email__input {
+    background-color: #FFFFFF;
+}
+
+.follow__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.email__input {
+    position: relative;
+    border-radius: 36px;
+    width: 282px;
+    margin-top: 14px;
+}
+
+.email__input img {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+}
+
+.email__input input {
+    width: 282px;
+    height: 59px;
+    border-radius: 36px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #5C6370;
+    opacity: 0.6;
+    padding: 13px 10px 13px 20px;
+}
+
+.connection__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin: 20px 0 15px 0;
+}
+
+.tel__number {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.work__time {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin: 5px 0;
+}
+
+.req__call {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+}
+
+.footer__email {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin-top: 25px;
+}
+
+.footer__email-desc {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.connection {
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bank__cards {
+    width: 127px;
+    display: flex;
+    justify-content: space-between;
+}

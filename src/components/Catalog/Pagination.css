@@ -1,0 +1,42 @@
+.pagination__wrapper {
+    margin-top: 58px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    width: 234px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.page__items {
+    max-width: 166px;
+    margin: 0 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page__item span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #3F4E65;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.active__page {
+    padding: 8px 10px;
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+    border-radius: 1000px;
+}

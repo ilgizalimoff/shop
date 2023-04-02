@@ -1,0 +1,17 @@
+.basket__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: #111111;
+    margin: 50px 0;
+}
+
+.basket__items>div:last-child {
+    border-bottom: 1px dashed #3F4E65;
+}
+
+@import url('../Basket/BasketItem.css');
+
+@import url('../Basket/Ordering.css');

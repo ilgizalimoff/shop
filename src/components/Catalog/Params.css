@@ -1,0 +1,126 @@
+.price__inputs {
+  width: 238px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.cena {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3F4E65;
+  margin-bottom: 16px;
+}
+
+.param__price input {
+  padding: 4px 33px;
+  width: 100px;
+  height: 23px;
+  background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+  border-radius: 1000px;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #3F4E65;
+}
+
+.cena span:nth-child(2) {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #111111;
+  margin-left: 5px;
+}
+
+.param__producer {
+  margin-top: 30px;
+}
+
+.see__all {
+  width: 238px;
+  margin-top: 15px;
+  border-bottom: 1px dashed #3F4E65;
+  padding-bottom: 20px;
+}
+
+.see__all span {
+  color: #3F4E65;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  margin-right: 5px;
+}
+
+.param__producer h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+}
+
+.search__producer {
+  position: relative;
+}
+
+.search__producer input {
+  width: 238px;
+  height: 59px;
+  border-radius: 36px;
+  background: #EDEDED;
+  padding: 13px 10px 13px 20px;
+  margin: 15px 0;
+}
+
+.search__producer img {
+  position: absolute;
+  content: url('/public/img/search.svg');
+  padding: 10px;
+  width: 39px;
+  height: 39px;
+  border-radius: 1000px;
+  background: #FFC85E;
+  top: 26px;
+  left: 184px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.producers {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.producers label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3F4E65;
+}
+
+.menu__items {
+  width: 238px;
+}
+
+.menu__items h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #111111;
+  margin-top: 20px;
+}
+
+.selected__item {
+  border: 1px solid #FFC85E;
+  padding: 8px;
+}

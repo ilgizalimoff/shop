@@ -1,0 +1,52 @@
+.add__wrapper {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.add__val-wrapper {
+    width: 500px;
+}
+
+.add__val {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.add__val input,
+.type_care-input {
+    font-size: 15px;
+    background-color: whitesmoke;
+    padding: 12px;
+    border-radius: 20px;
+}
+
+.add__btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.add__btn button,
+.type_care_btn {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.type_care_btn {
+    margin: 20px 0;
+}
+
+.type_care-inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.type_care-inputs input {
+    margin: 10px 0;
+}

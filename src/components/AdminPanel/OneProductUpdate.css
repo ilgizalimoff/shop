@@ -1,0 +1,36 @@
+.one__update {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.one__update-wrapper {
+    width: 500px;
+}
+
+.one__update__value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.one__update__value input {
+    font-size: 15px;
+    background-color: whitesmoke;
+    padding: 12px;
+    border-radius: 20px;
+}
+
+.update__btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.update__btn button {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}

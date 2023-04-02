@@ -1,0 +1,119 @@
+.page {
+    margin: 45px 0 50px 0;
+}
+
+.page span:nth-child(1) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3F4E65;
+}
+
+.page span:nth-child(2) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3F4E65;
+    opacity: 0.5;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px dashed #3F4E65;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.title h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: #111111;
+}
+
+
+
+.sort span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+    margin-right: 5px;
+}
+
+.sort select {
+    margin-right: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3F4E65;
+    border: none;
+    outline: none;
+}
+
+#select__names option {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3F4E65;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.down {
+    color: #3F4E65;
+    margin-bottom: 2px;
+}
+
+.main__menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.main__menu li {
+    height: 70px;
+    width: 140px;
+    padding: 18px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+    margin-right: 11px;
+    margin-top: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__menu li:last-child {
+    margin-right: 0;
+}
+
+.main__menu li a {
+    width: 107px;
+    margin: 0 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #3F4E65;
+}
+
+.selected_care {
+    border: 1px solid #FFC85E;
+}
