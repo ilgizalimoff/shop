@@ -2,17 +2,16 @@ import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { BasketContext } from '../../context/context';
 import { homePage } from '../../constants/constants';
+import { basketItemsSum } from '../../utils/utils';
 
 const HeaderMain = () => {
     const { basketItems } = useContext(BasketContext)
 
-    const [result, setResult] = useState<any>()
+    const [result, setResult] = useState(0)
 
     useEffect(() => {
-        let sum = basketItems.reduce((acc: any, curval: any) =>
-            acc + (Number(curval.price.replace(',', '.')) * curval.count), 0)
-
-        setResult(sum.toFixed(2))
+        const sum: number = basketItemsSum(basketItems)
+        setResult(Math.floor(sum * 100) / 100)
     }, [basketItems])
 
     return (
@@ -56,12 +55,13 @@ const HeaderMain = () => {
 
             <li >
                 <Link
+                    data-testid="basket-link"
                     to={'/basket'}
                     className="basket__btn"
                 >
                     <div className="basket_count">
                         <span>
-                            {basketItems.length}
+                            {basketItems?.length}
                         </span>
 
                         <img src={homePage + "/img/basket.svg"} />

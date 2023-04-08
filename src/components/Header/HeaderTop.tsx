@@ -35,7 +35,9 @@ export default function HeaderTop() {
                 <li><a href="">Возврат</a></li>
                 <li><a href="">Контакты</a></li>
                 <li className="admin">
-                    <Link to='/admin'>
+                    <Link
+                        data-testid='admin'
+                        to='/admin'>
                         Админ-панель
                     </Link>
                 </li>

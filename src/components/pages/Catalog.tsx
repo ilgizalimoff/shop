@@ -5,21 +5,20 @@ import Pagination from '../Catalog/Pagination'
 import { changePriceToNumber } from '../../utils/utils'
 import ProductList from '../Catalog/ProductList'
 import { DataContext } from '../../context/context'
-import { items } from '../../constants/constants'
 
 const Catalog = () => {
   const { products, limit, setCurrentPage, currentPage } = useContext(DataContext)
 
-  const [filter, setFilter] = useState('')
-  const [currentItems, setCurrentItems] = useState<any>([])
-  const [active, setActiveClass] = useState('Все')
+  const [sortMethod, setSortMethod] = useState('')
+  const [currentItems, setCurrentItems] = useState(products)
+  const [activeTypeCare, setAactiveTypeCare] = useState('Все')
 
-  function fetchDataFromLocalstorage() {
-    setCurrentItems(products.slice((currentPage - 1) * limit, currentPage * limit))
+  function fetchProductsOnCurrentPage() {
+    setCurrentItems(products?.slice((currentPage - 1) * limit, currentPage * limit))
   }
 
-  const sortProducts = (sort: any) => {
-    setFilter(sort)
+  const sortProducts = (sort: string) => {
+    setSortMethod(sort)
 
     switch (sort) {
       case 'price':
@@ -44,19 +43,20 @@ const Catalog = () => {
     }
   }
 
-  const menuItemClick = (item: any) => {
-    setActiveClass(item)
+  const typeCareItemClick = (item: string) => {
+    setAactiveTypeCare(item)
+
     if (item !== 'Все') {
-      setCurrentItems([...products.slice((currentPage - 1) * limit, currentPage * limit)].filter((elem: any) =>
-        elem.type_care.find((el: any) => {
-          return el.title.toLowerCase() == item.toLowerCase() ? true : false
-        }
-        )))
-    }
-    else {
+      setCurrentItems([...products.slice((currentPage - 1) * limit, currentPage * limit)]
+        .filter((elem: any) =>
+          elem.type_care.find((el: any) => {
+            return el.title.toLowerCase() == item.toLowerCase() ? true : false
+          })
+        )
+      )
+    } else {
       setCurrentItems(products.slice((currentPage - 1) * limit, currentPage * limit))
     }
-
   }
 
   const changePage = (page: number) => {
@@ -64,18 +64,19 @@ const Catalog = () => {
     setCurrentPage(page)
   }
 
+
+
   useEffect(() => {
-    fetchDataFromLocalstorage()
+    fetchProductsOnCurrentPage()
   }, [products])
 
   return (
     <>
       <CatalogTop
-        value={filter}
-        defaulValue='Сортировка'
+        sortMethod={sortMethod}
         onChange={sortProducts}
-        menuItemClick={menuItemClick}
-        active={active}
+        typeCareItemClick={typeCareItemClick}
+        activeTypeCare={activeTypeCare}
       />
 
       <section className="catalog">
@@ -83,8 +84,8 @@ const Catalog = () => {
           <div className="catalog__wrapper">
             <div className="left__menu">
               <Params
-                menuItemClick={menuItemClick}
-                active={active}
+                typeCareItemClick={typeCareItemClick}
+                activeTypeCare={activeTypeCare}
               />
             </div>
 

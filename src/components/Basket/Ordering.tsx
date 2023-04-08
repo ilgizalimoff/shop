@@ -1,8 +1,9 @@
-import { FC, useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { BasketContext } from '../../context/context'
+import { basketItemsSum } from '../../utils/utils'
 
 const Ordering = () => {
-    const [result, setResult] = useState<any>()
+    const [result, setResult] = useState(0)
     const { basketItems, setBasketItems } = useContext(BasketContext)
 
     function orderingAndClearBasket() {
@@ -11,20 +12,17 @@ const Ordering = () => {
     }
 
     useEffect(() => {
-        let sum =
-            basketItems.reduce((acc: any, curval: any) =>
-                acc + (Number(curval.price.replace(',', '.')) * curval.count), 0)
-
-        setResult(sum.toFixed(2))
+        const sum: number = basketItemsSum(basketItems)
+        setResult(Math.floor(sum * 100) / 100)
     }, [basketItems])
 
     return (
         <div className="ordering">
             {
-                basketItems.length !== 0
+                basketItems?.length !== 0
                     ?
                     <>
-                        <button
+                        <button data-testid="ordering-btn"
                             onClick={() => orderingAndClearBasket()}
                             className='ordering__btn'
                         >
@@ -36,7 +34,7 @@ const Ordering = () => {
                         </div>
                     </>
                     :
-                    <div className='empty__basket'>
+                    <div data-testid="empty-div" className='empty__basket'>
                         Корзина пуста
                     </div>
             }

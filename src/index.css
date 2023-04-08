@@ -43,25 +43,25 @@ body {
 
 /*HEADER*/
 
-@import url('./components/Header/Header.css');
+@import url('./components/Header/HeaderStyles/Header.css');
 
 /*CATALOG*/
 
-@import url('./components/pages/Catalog.css');
+@import url('./components/pages/PagesStyles/Catalog.css');
 
 /*PRODUCTIDITEM*/
 
-@import url('./components/pages/ProductIDItem.css');
+@import url('./components/pages/PagesStyles/ProductIDItem.css');
 
 /*BASKET*/
 
-@import url('./components/pages/Basket.css');
+@import url('./components/pages/PagesStyles/Basket.css');
 
 /*FOOTER*/
 
-@import url('./components/Footer/Footer.css');
+@import url('./components/Footer/FooterStyles/Footer.css');
 
 /*ADMIN*/
 
-@import url('./components/pages/AdminPanel.css');
+@import url('./components/pages/PagesStyles/AdminPanel.css');
 

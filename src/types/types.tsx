@@ -7,10 +7,11 @@ export interface IProduct {
     producer: string,
     brand: string,
     description: string,
-    price: number,
-    id:number
+    price: string,
+    id: number
+    count?: number
 }
 
-export interface IPage {
-    name: number
+export interface IProductInBasket extends IProduct {
+    count: number
 }

@@ -4,7 +4,7 @@ import { getPagesArray } from '../../utils/utils'
 import { homePage } from '../../constants/constants'
 
 interface IPaginationProps {
-    changePage: any
+    changePage: (page: number) => void
 }
 
 const Pagination: FC<IPaginationProps> = ({ changePage }) => {
@@ -19,7 +19,8 @@ const Pagination: FC<IPaginationProps> = ({ changePage }) => {
                 <ul className="page__items">
                     {
                         pagesArray.map(p =>
-                            <li
+                            <li 
+                                data-testid='page'
                                 onClick={() => changePage(p)}
                                 key={p}
                                 className={
@@ -29,7 +30,8 @@ const Pagination: FC<IPaginationProps> = ({ changePage }) => {
                                 }
                             >
                                 <span >{p}</span>
-                            </li>)
+                            </li>
+                        )
                     }
                 </ul>
 

@@ -1,12 +1,12 @@
 import { FC } from "react"
-import { homePage, mainMenuItems } from '../../constants/constants'
+import { homePage, typeCareItems } from '../../constants/constants'
 
 interface IParamsProps {
-    menuItemClick: any
-    active: any
+    typeCareItemClick: (item: string) => void
+    activeTypeCare: string
 }
 
-const Params: FC<IParamsProps> = ({ menuItemClick, active }) => {
+const Params: FC<IParamsProps> = ({ typeCareItemClick, activeTypeCare }) => {
     return (
         <>
             <div className="param__price">
@@ -30,7 +30,7 @@ const Params: FC<IParamsProps> = ({ menuItemClick, active }) => {
                 <div className="search__producer">
                     <input type="text" placeholder="Поиск..." />
 
-                    <img src={homePage + "/img/search.svg"} alt="" />
+                    <img src={homePage + "/img/search.svg"}  />
                 </div>
 
                 <div className="producers">
@@ -52,22 +52,24 @@ const Params: FC<IParamsProps> = ({ menuItemClick, active }) => {
                 </div>
 
                 <div className='see__all'>
-                    <a href="">
+                    <a>
                         <span> Показать все</span>
 
-                        <img src={homePage + "/img/select.svg"} alt="" />
+                        <img src={homePage + "/img/select.svg"} />
                     </a>
                 </div>
             </div>
 
             <div className="menu__items">
                 {
-                    mainMenuItems.map((elem: any) =>
-                        <a key={elem}
-                            onClick={() => menuItemClick(elem)}>
-                            <h3 className={active == elem ?
-                                'selected__item' :
-                                ''}
+                    typeCareItems.map((elem: any) =>
+                        <a
+                            key={elem}
+                            onClick={() => typeCareItemClick(elem)}>
+                            <h3
+                                className={activeTypeCare == elem ?
+                                    'selected__item' :
+                                    ''}
                             >
                                 {elem}
                             </h3>

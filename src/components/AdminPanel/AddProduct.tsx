@@ -51,7 +51,7 @@ const AddProduct = () => {
     setInfo([])
   }
 
-  const addIndfo = () => {
+  const addTypeCare = () => {
     setInfo([...info, { title: '', number: Date.now() }])
   }
 
@@ -116,7 +116,7 @@ const AddProduct = () => {
           </div>
 
           <button
-            onClick={() => addIndfo()}
+            onClick={() => addTypeCare()}
             className='type_care_btn'
           >
             Добавить тип ухода

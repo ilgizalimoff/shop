@@ -31,10 +31,10 @@
   flex-wrap: wrap;
 }
 
-@import url('../Catalog/CatalogTop.css');
+@import url('../../Catalog/CatalogStyles/CatalogTop.css');
 
-@import url('../Catalog/Params.css');
+@import url('../../Catalog/CatalogStyles/Params.css');
 
-@import url('../Catalog/ProductItem.css');
+@import url('../../Catalog/CatalogStyles/ProductItem.css');
 
-@import url('../Catalog/Pagination.css');
+@import url('../../Catalog/CatalogStyles/Pagination.css');

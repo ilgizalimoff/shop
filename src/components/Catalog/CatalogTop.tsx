@@ -1,18 +1,22 @@
-import { useMemo, useState, useContext, useEffect, FC, useRef } from 'react'
-import { homePage, mainMenuItems, options } from '../../constants/constants'
+import { FC, useRef } from 'react'
+import { homePage, typeCareItems, options } from '../../constants/constants'
 
 interface ICatalogTopProps {
-    value?: any
-    onChange: any
-    defaulValue: any
-    menuItemClick: any
-    active: any
+    sortMethod: string
+    onChange: (e: any) => void
+    typeCareItemClick: (item: string) => void
+    activeTypeCare: string
 }
 
-const CatalogTop: FC<ICatalogTopProps> = ({ active, value, onChange, defaulValue, menuItemClick }) => {
+const CatalogTop: FC<ICatalogTopProps> = ({
+    activeTypeCare,
+    sortMethod,
+    onChange,
+    typeCareItemClick
+}) => {
     const selectImgRef = useRef<any>()
 
-    const onSelectClick = () => {
+    const sortSelectClick = () => {
         selectImgRef.current.style.transform == 'rotate(180deg)' ?
             selectImgRef.current.style.transform = 'rotate(0deg)' :
             selectImgRef.current.style.transform = 'rotate(180deg)'
@@ -32,13 +36,14 @@ const CatalogTop: FC<ICatalogTopProps> = ({ active, value, onChange, defaulValue
                     <div className="sort">
                         <span>Сортировка:</span>
 
-                        <select onClick={() => onSelectClick()}
+                        <select
+                            onClick={() => sortSelectClick()}
                             id="select__names"
-                            value={value}
+                            value={sortMethod}
                             onChange={event => onChange(event.target.value)}
                         >
                             <option value='' disabled>
-                                {defaulValue}
+                                Сортировка
                             </option>
 
                             {
@@ -53,8 +58,10 @@ const CatalogTop: FC<ICatalogTopProps> = ({ active, value, onChange, defaulValue
                         </select>
 
                         <a>
-                            <img ref={selectImgRef}
-                                className='down' src={homePage + "/img/select.svg"} alt=""
+                            <img
+                                ref={selectImgRef}
+                                className='down'
+                                src={homePage + "/img/select.svg"}
                             />
                         </a>
                     </div>
@@ -63,12 +70,12 @@ const CatalogTop: FC<ICatalogTopProps> = ({ active, value, onChange, defaulValue
                 <ul
                     className="main__menu">
                     {
-                        mainMenuItems.map((item: any) =>
+                        typeCareItems.map((item: any) =>
                             <li key={item}
-                                className={active == item ?
+                                className={activeTypeCare == item ?
                                     'selected_care' :
                                     ''}
-                                onClick={(e) => menuItemClick(item)}
+                                onClick={(e) => typeCareItemClick(item)}
                             >
                                 <a>
                                     {item}

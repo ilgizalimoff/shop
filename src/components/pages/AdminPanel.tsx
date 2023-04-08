@@ -4,7 +4,7 @@ const AdminPanel = () => {
 
   return (
     <div className="container">
-      <div className='admin__wrapper'>
+      <div data-testid='admin__wrapper' className='admin__wrapper'>
         <Link to='/admin/add'>
           <button>Добавить товар</button>
         </Link>

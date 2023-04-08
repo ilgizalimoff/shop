@@ -12,6 +12,6 @@
     border-bottom: 1px dashed #3F4E65;
 }
 
-@import url('../Basket/BasketItem.css');
+@import url('../../Basket/BasketStyles/BasketItem.css');
 
-@import url('../Basket/Ordering.css');
+@import url('../../Basket/BasketStyles/Ordering.css');

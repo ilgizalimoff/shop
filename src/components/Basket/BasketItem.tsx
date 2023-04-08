@@ -1,10 +1,12 @@
 import { useState, FC, useContext } from 'react'
 import { BasketContext } from '../../context/context'
 import { homePage } from '../../constants/constants'
+import { changePriceToString } from '../../utils/utils'
+import { IProductInBasket } from '../../types/types'
 
 interface IBasketItemProps {
-    value: any,
-    removeFromBasket: any,
+    value: IProductInBasket,
+    removeFromBasket: (id: number) => void,
 }
 
 const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
@@ -12,9 +14,9 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
 
     const { basketItems, setBasketItems } = useContext(BasketContext)
 
-    function incrementCount(id: any, countValue: any) {
+    function incrementCount(id: number, countValue: number) {
         setBasketItems(
-            basketItems.map((element: any) => {
+            basketItems.map((element: IProductInBasket) => {
                 if (element.id == id) {
                     setCount(countValue + 1)
                     return { ...element, count: countValue + 1 }
@@ -26,7 +28,7 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
         )
     }
 
-    function decrementCount(id: any, countValue: any) {
+    function decrementCount(id: number, countValue: number) {
         setBasketItems(
             basketItems.map((element: any) => {
                 if (element.id == id) {
@@ -41,9 +43,10 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
     }
 
     return (
-        <div className="basket__item">s
+        <div data-testid='basket-item'
+            className="basket__item">
             <div className="basket__item-img">
-                <img src={homePage + value?.image_url} alt="" />
+                <img src={homePage + value?.image_url} />
             </div>
 
             <div className="basket__item-description-wrapper">
@@ -61,7 +64,8 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
                         </span>
                     </div>
 
-                    <h3 className="basket__item-name">
+                    <h3
+                        className="basket__item-name">
                         {value?.name}
                         {value?.description}
                     </h3>
@@ -94,11 +98,7 @@ const BasketItem: FC<IBasketItemProps> = ({ value, removeFromBasket }) => {
 
                     <div className="basket__item-price">
                         {
-                            String(
-                                (Number(value?.price.replace(',', '.'))
-                                    *
-                                    Number(count)).toFixed(2)
-                            )
+                            changePriceToString(value?.price, count)
                         } ₸
                     </div>
 

@@ -10,13 +10,18 @@ const UpdateProduct = () => {
       <div className="update__wrapper">
         {
           products.map((item: any) =>
-            <div key={item.id} className="update__item">
+            <div
+              key={item.id}
+              className="update__item"
+            >
               <div className="update__item-info">
                 {item.description}
               </div>
+
               <Link
                 className='update'
-                to={'/admin/update/' + item.id}>
+                to={'/admin/update/' + item.id}
+              >
                 Изменить
               </Link>
             </div>

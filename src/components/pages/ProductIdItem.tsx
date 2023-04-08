@@ -2,57 +2,55 @@ import { useEffect, useState, useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { BasketContext, DataContext } from '../../context/context'
 import { homePage } from '../../constants/constants'
+import { IProduct, IProductInBasket } from '../../types/types'
+import { changePriceToString } from '../../utils/utils'
 
 const ProductIdItem = () => {
   const { basketItems, setBasketItems } = useContext(BasketContext)
   const { products } = useContext(DataContext)
 
   const params = useParams()
+  const paramsId = Number(params.id)
 
-  const [product, setProduct] = useState<any>({})
-  const [count, setCount] = useState<any>(1)
+  const [product, setProduct] = useState<IProduct>(products[0])
+  const [count, setCount] = useState(1)
 
-  async function fetchingById() {
-    let newElem = [...products].filter((p: any) => p.id == params.id)
-    setProduct(newElem)
+  async function fetchProductById() {
+    setProduct([...products].filter((p: IProduct) => p.id === paramsId)[0])
 
-    basketItems.forEach((element: any) => {
-      element.id == params.id ?
+    basketItems.forEach((element: IProductInBasket) => {
+      element.id === paramsId ?
         setCount(element.count) :
         setCount(1)
     });
   }
 
   useEffect(() => {
-    fetchingById()
+    fetchProductById()
   }, [params.id])
 
-  function onBasketClick(id: any) {
-    if (!basketItems.find((item: any) => item.id == id)) {
-      let newProduct: any = product[0]
-
-      newProduct.count = count
-
-      let newArr = [...basketItems, newProduct]
-
-      setBasketItems(newArr)
-      localStorage.setItem('basketItems', JSON.stringify(newArr))
+  function onBasketClick(id: number) {
+    if (!basketItems.find((item: IProductInBasket) => item.id == id)) {
+      setBasketItems([...basketItems, { ...product, count: count }])
+      localStorage.setItem('basketItems', JSON.stringify(
+        [...basketItems, { ...product, count: count }]
+      ))
     } else {
-      let newArr = basketItems.filter((el: any) => el.id !== id)
-
-      setBasketItems(newArr)
-      localStorage.setItem('basketItems', JSON.stringify(newArr))
+      setBasketItems([...basketItems].filter((el: IProductInBasket) => el.id !== id))
+      localStorage.setItem('basketItems', JSON.stringify(
+        [...basketItems].filter((el: IProductInBasket) => el.id !== id)
+      ))
     }
   }
 
   function incrementCount() {
-    basketItems.find((item: any) => item.id == params.id) ?
+    basketItems.find((item: IProductInBasket) => item.id == paramsId) ?
       setCount(count) :
       setCount(count + 1)
   }
 
   function decrementCount() {
-    basketItems.find((item: any) => item.id == params.id) ?
+    basketItems.find((item: IProductInBasket) => item.id == paramsId) ?
       setCount(count) :
       setCount(count - 1)
   }
@@ -62,20 +60,20 @@ const ProductIdItem = () => {
       <div className="container">
         <div className="page__name">
           <span>Главная</span>
+
           <span>
             <Link to={'/catalog'}>
               Каталог
             </Link>
           </span>
-          <span className='page__name-value'>{product[0]?.description}</span>
+
+          <span className='page__name-value'>
+            {product?.description}
+          </span>
         </div>
         <div className="card__wrapper">
           <div className="img__block">
-            <img
-              src={
-                homePage + product[0]?.image_url
-              }
-            />
+            <img src={homePage + product?.image_url} />
           </div>
 
           <div className="card__description">
@@ -84,35 +82,29 @@ const ProductIdItem = () => {
             </div>
 
             <div className="card__name">
-              <span> {product[0]?.name} </span>
+              <span> {product?.name} </span>
 
               <span>
-                {product[0]?.description}
+                {product?.description}
               </span>
             </div>
 
             <div className="card__size-type">
               <img src={
-                product[0]?.size_type == 'мл' ?
+                product?.size_type == 'мл' ?
                   homePage + '/img/volume.svg' :
                   homePage + '/img/weight.svg'
               }
               />
 
               <span>
-                {product[0]?.size} {product[0]?.size_type}
+                {product?.size} {product?.size_type}
               </span>
             </div>
 
             <div className="card__price">
               <span>
-
-                {
-                  String(
-                    Number(product[0]?.price?.replace(',', '.') *
-                      Number(count)).toFixed(2)
-                  )
-                }
+                {changePriceToString(product?.price, count)}
               </span>
 
               <div className="card__inputs">
@@ -132,15 +124,15 @@ const ProductIdItem = () => {
                 </button>
               </div>
               <button
-                onClick={() => onBasketClick(product[0]?.id)}
+                onClick={() => onBasketClick(product!.id)}
                 className={
-                  !basketItems.find((item: any) => item.id == product[0]?.id) ?
+                  !basketItems.find((item: IProductInBasket) => item.id == product?.id) ?
                     'onbasket__btn' :
                     'onbasket__btn-select'
                 }
               >
                 {
-                  !basketItems.find((item: any) => item.id == product[0]?.id) ?
+                  !basketItems.find((item: IProductInBasket) => item.id == product?.id) ?
                     'В корзину' :
                     'В корзине'
                 }
@@ -168,28 +160,28 @@ const ProductIdItem = () => {
                 <li>
                   <span> Производитель:</span>
                   <h3>
-                    {product[0]?.producer}
+                    {product?.producer}
                   </h3>
                 </li>
 
                 <li>
                   <span>Бренд:</span>
                   <h3>
-                    {product[0]?.brand}
+                    {product?.brand}
                   </h3>
                 </li>
 
                 <li>
                   <span>Артикул:</span>
                   <h3>
-                    {product[0]?.articul}
+                    Артикул
                   </h3>
                 </li>
 
                 <li>
                   <span>Штрихкод:</span>
                   <h3>
-                    {product[0]?.barcode}
+                    {product?.barcode}
                   </h3>
                 </li>
               </ul>
@@ -234,28 +226,28 @@ const ProductIdItem = () => {
                   <li>
                     <span>Производитель:</span>
                     <h3>
-                      {product[0]?.producer}
+                      {product?.producer}
                     </h3>
                   </li>
 
                   <li>
                     <span>Бренд:</span>
                     <h3>
-                      {product[0]?.brand}
+                      {product?.brand}
                     </h3>
                   </li>
 
                   <li>
                     <span>Артикул:</span>
                     <h3>
-                      {product[0]?.articul}
+                      Артикул
                     </h3>
                   </li>
 
                   <li>
                     <span>Штрихкод:</span>
                     <h3>
-                      {product[0]?.barcode}
+                      {product?.barcode}
                     </h3>
                   </li>
 

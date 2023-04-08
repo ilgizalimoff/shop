@@ -3,10 +3,18 @@ import { useContext } from 'react'
 import { getPageCount } from "../../utils/utils"
 
 const RemoveProduct = () => {
-  const { products, setProducts, totalCount, setTotalCount, setTotalPages, limit } = useContext(DataContext)
+  const {
+    products,
+    setProducts,
+    totalCount,
+    setTotalCount,
+    setTotalPages,
+    limit
+  } = useContext(DataContext)
+  
   const { basketItems, setBasketItems } = useContext(BasketContext)
 
-  const removeProduct = (id: any) => {
+  const removeProduct = (id: number) => {
     setProducts(products.filter((el: any) => el.id !== id))
     setBasketItems(basketItems.filter((el: any) => el.id !== id))
     setTotalCount(totalCount - 1)

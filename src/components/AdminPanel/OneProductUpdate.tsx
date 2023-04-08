@@ -8,30 +8,30 @@ const OneProductUpdate = () => {
     const { products, setProducts } = useContext(DataContext)
     const { basketItems, setBasketItems } = useContext(BasketContext)
 
-    const [product, setProduct] = useState<any>({})
+    const [currentProduct, setCurrentProduct] = useState<any>()
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [size, setSize] = useState('')
     const [producer, setProducer] = useState('')
     const [brand, setBrand] = useState('')
 
-    const fetchingById = () => {
-        let newElem = [...products].filter((p: any) => p.id == params.id)
+    const fetchingProductById = () => {
+        let response = [...products].filter((p: any) => p.id == params.id)
 
-        setProduct(newElem)
-        setName(newElem[0]?.name)
-        setSize(newElem[0]?.size)
-        setProducer(newElem[0]?.producer)
-        setBrand(newElem[0]?.brand)
-        setPrice(newElem[0]?.price)
+        setCurrentProduct(response[0])
+        setName(response[0]?.name)
+        setSize(response[0]?.size)
+        setProducer(response[0]?.producer)
+        setBrand(response[0]?.brand)
+        setPrice(response[0]?.price)
     }
 
     useEffect(() => {
-        fetchingById()
+        fetchingProductById()
     }, [params.id])
 
-    let updateItem = {
-        ...product[0],
+    const updateItem = {
+        ...currentProduct,
         name: name,
         size: size,
         producer: producer,
@@ -39,7 +39,7 @@ const OneProductUpdate = () => {
         brand: brand,
     }
 
-    const saveСhanges = (id: any) => {
+    const saveСhanges = (id: number) => {
         setProducts(products.map((elem: any) => elem.id == id ? updateItem : elem))
 
         localStorage.setItem('products', JSON.stringify(products.map((elem: any) =>
@@ -110,7 +110,7 @@ const OneProductUpdate = () => {
 
             </div >
             <div className='update__btn'>
-                <button onClick={() => saveСhanges(product[0]?.id)}>
+                <button onClick={() => saveСhanges(currentProduct?.id)}>
                     Сохранить изменения
                 </button>
             </div>

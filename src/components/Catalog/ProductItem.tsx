@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react'
-import { IProduct } from '../../types/types'
+import { IProduct, IProductInBasket } from '../../types/types'
 import { Link } from "react-router-dom";
 import { BasketContext } from '../../context/context';
 import { homePage } from '../../constants/constants';
@@ -11,26 +11,21 @@ interface ProductItemProps {
 const ProductItem: FC<ProductItemProps> = ({ product }) => {
     const { basketItems, setBasketItems } = useContext(BasketContext)
 
-    function onBasketClick(id: any) {
-        if (!basketItems.find((item: any) => item.id == id)) {
-            let newProduct: any = product
-
-            newProduct.count = 1
-
-            let newArr = [...basketItems, newProduct]
-
-            setBasketItems(newArr)
-            localStorage.setItem('basketItems', JSON.stringify(newArr))
+    function onBasketClick(id: number) {
+        if (!basketItems.find((item: IProductInBasket) => item.id == id)) {
+            product.count = 1
+            setBasketItems([...basketItems, product])
+            localStorage.setItem('basketItems', JSON.stringify([...basketItems, product]))
         } else {
-            let newArr = basketItems.filter((el: any) => el.id !== id)
-
-            setBasketItems(newArr)
-            localStorage.setItem('basketItems', JSON.stringify(newArr))
+            setBasketItems(basketItems.filter((el: IProductInBasket) => el.id !== id))
+            localStorage.setItem('basketItems', JSON.stringify(
+                basketItems.filter((el: IProductInBasket) => el.id !== id))
+            )
         }
     }
 
     return (
-        <div className="product__item">
+        <div  className="product__item">
             <div className="item__img">
                 <img src={homePage + product.image_url} />
             </div>

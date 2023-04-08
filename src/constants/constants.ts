@@ -8,7 +8,7 @@ export const options = [
     { value: 'pricetop', name: 'Цена ↑' }
 ]
 
-export const mainMenuItems = [
+export const typeCareItems = [
     'Все',
     'Уход за телом',
     'Уход за руками',
@@ -23,7 +23,7 @@ export const mainMenuItems = [
     'Бумажная продукция',
 ]
 
-export const items =
+export const localProducts =
 [
     {
         "id": 1,
